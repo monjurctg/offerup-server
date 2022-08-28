@@ -14,10 +14,6 @@ app.use("/public/uploads",express.static("/public/uploads"))
 
 const PORT = process.env.PORT || 5000;
 
-// app.use(cors({
-//    origin:"http://localhost:5000/api/"
-// }))
-// parse application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }))
 
 // parse application/json
@@ -25,13 +21,6 @@ app.use(express.json())
 
 
 app.use(cors());
-// app.use(cors({
-
-// }))
-// app.use(cors({
-
-//    origin:"*"
-// }));
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -48,7 +37,6 @@ app.use(express.urlencoded({ extended: true }));
     console.log(err)
     process.exit();
  })
-
 app.use('/api',productRoute)
 app.use('/api',orderRoute)
 

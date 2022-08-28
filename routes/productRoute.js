@@ -1,7 +1,7 @@
-const { makeActive } = require("../controlers/productControler");
+const { makeActive, addp } = require("../controlers/productControler");
 const { activeProduct } = require("../controlers/productControler");
 const {
-  addProduct,
+
   allProduct,
   singleProduct,
 
@@ -14,7 +14,7 @@ const router = require("express").Router();
 
 
 
-router.post("/post-product",addProduct)
+router.post("/post-product",addp)
 router.get("/all-product", allProduct);
 
 router.get("/singleProduct/:id", singleProduct);

@@ -29,6 +29,21 @@ const Product = require("../models/ProductModels");
 
 // get products
 
+const addp = async (req, res) => {
+  console.log(req.body);
+  const newOrder = new Product({
+    ...req.body,
+  });
+  try {
+    await newOrder.save().then((doc) => {
+      res.status(200).json({ message: "add successfully", data: doc });
+    });
+  } catch (err) {
+    console.log(err)
+    res.json({ err });
+  }
+};
+
 let allProduct = async (req, res) => {
   try{
     await Product.find({}).then((doc) => res.send(doc));
@@ -74,7 +89,7 @@ let deleteProduct = async (req, res) => {
 };
 
 module.exports = {
-  addProduct,
+  addp,
   allProduct,
   singleProduct,
   activeProduct,
