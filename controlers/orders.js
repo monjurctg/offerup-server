@@ -9,6 +9,7 @@ const addOrder = async (req, res) => {
       res.status(200).json({ message: "order add successfully", data: doc });
     });
   } catch (err) {
+    console.log(err)
     res.json({ err });
   }
 };

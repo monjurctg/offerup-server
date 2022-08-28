@@ -1,36 +1,31 @@
 // add product
 
 const Product = require("../models/ProductModels");
-let url= "https://localhost:5000/"
-let url2= "https://offerup-server-ds4zi13wy-monjurctg.vercel.app/"
+// const addProduct = async (req, res) => {
+//   // const files = req.files;
+//   // let image1 =url+ files["image1"][0].path;
+//   // let image2 =url+ files["image2"][0].path;
+//   // let image3 = url2+files["image3"][0].path;
 
-
-const addProduct = async (req, res) => {
-  // const files = req.files;
-  // let image1 =url+ files["image1"][0].path;
-  // let image2 =url+ files["image2"][0].path;
-  // let image3 = url2+files["image3"][0].path;
-
-  // let image4 =url+ files["image4"][0].path;
-
-  try {
-    const newProduct = new Product({
-      ...req.body
-    });
-    // console.log('newProduct :>> ', newProduct);
-    newProduct.save().then((doc) =>
-      res.json({
-        message: "product added successfully",
-        data: doc,
-      })
-    );
-  } catch (err) {
-    res.json({
-      status: "error",
-      message: err,
-    });
-  }
-};
+//   // let image4 =url+ files["image4"][0].path;
+// console.log(req.body,"body")
+//   try {
+//     const newProduct = await new Product(req.body); // console.log('newProduct :>> ', newProduct);
+//    await  newProduct.save().then((doc) =>
+  
+//       res.json({
+//         message: "product added successfully",
+//         data: doc,
+//       })
+//     );
+//   } catch (err) {
+//     console.log(err)
+//     res.json({
+//       status: "error",
+//       message: err,
+//     });
+//   }
+// };
 
 // get products
 

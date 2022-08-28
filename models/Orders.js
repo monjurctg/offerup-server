@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const orderSchema = new Schema({
-    name:String,
+    name:{type:String,require:true,unique:true},
     email:{type:String,require:true,unique:true},
-    phone:Number,
-    address:String,
-    city:String,
-    state:String,
-    zip:Number,
+    phone:{type:Number,require:true,unique:true},
+    address:{type:String,require:true,unique:true},
+    city:{type:String,require:true,unique:true},
+    state:{type:String,require:true,unique:true},
+    zip:{type:String,require:true,unique:true},
  
  
    

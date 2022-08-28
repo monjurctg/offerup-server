@@ -14,7 +14,7 @@ const router = require("express").Router();
 
 
 
-router.post("/add-product", addProduct);
+router.post("/post-product",addProduct)
 router.get("/all-product", allProduct);
 
 router.get("/singleProduct/:id", singleProduct);
@@ -26,12 +26,7 @@ router.get("/active-product", activeProduct);
 router.delete("/delete-product/:id", deleteProduct);
 
 router.get("/", (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-  res.setHeader('Access-Control-Allow-Credentials', true); // If needed
-
-  res.send('cors problem fix:)');
+  res.send('cors problem:)');
 });
 
 module.exports = router;
